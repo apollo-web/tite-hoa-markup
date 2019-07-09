@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>로라 - 민원</title>
+
+    <meta name="description" content="로라 - 관리사무소 도구">
+    <meta name="keywords" content="로라">
+    <meta property="og:image" content="/img/dist/launcher.png">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/dist/animate.css">
+    <link rel="stylesheet" href="/css/dist/ballon.css">
+    <link rel="stylesheet" href="/css/dist/style.css">
+    <!-- endinject -->
+</head>
+<body id="main" class="has-header">
+    <div class="dim"></div>
+
+    <!-- header -->
+    <div class="main-header">
+        <div class="hamburger">
+            <i class="material-icons md-24">menu</i>
+        </div>
+        <a class="main-header-link" href="/html/dashboard.html">
+            <img src="/img/dist/launcher.svg" class="main-header-logo">
+            <div class="main-header-apt-name-box"><span class="main-header-apt-name">옥련동 현대5차아파트</span></div>
+        </a>
+    </div>
+
+    <!-- sidebar -->
+    <div class="sidebar-container">
+        <div class="sidebar-wrapper">
+            <a class="sidebar-item dashboard-overall" title="상황판" href="/html/dashboard.html">
+                <i class="material-icons md-24">dashboard</i><span class="sidebar-text" data-subtitle="Dashboard">상황판</span>
+            </a>
+            <a class="sidebar-item board-plain" title="공지사항" href="/html/notification.html">
+                <i class="material-icons md-24">notification_important</i><span class="sidebar-text" data-subtitle="Dashboard">공지사항</span>
+            </a>
+            <a class="sidebar-item dashboard" title="주민투표" href="/html/vote.html">
+                <i class="material-icons md-24">how_to_vote</i><span class="sidebar-text" data-subtitle="Dashboard">주민투표</span>
+            </a>
+            <a class="sidebar-item board-plain this" title="민원" href="/html/petition.html">
+                <i class="material-icons md-24">record_voice_over</i><span class="sidebar-text" data-subtitle="Dashboard">민원</span>
+                <div class="sidebar-noti-new"><span class="noti-count">2</span></div>
+            </a>
+            <a class="sidebar-item board-plain" title="게시판" href="/html/business-post.html">
+                <i class="material-icons md-24">web</i><span class="sidebar-text" data-subtitle="Business post">게시판</span>
+            </a>
+            <a class="sidebar-item board-plain" title="예약알림 설정" href="/html/pre-noti.html">
+                <i class="material-icons md-24">alarm_add</i><span class="sidebar-text" data-subtitle="Notification">예약알림 설정</span>
+            </a>
+            <a class="sidebar-item board-plain" title="로그아웃" href="/index.html" onclick="confirm('로그아웃 하시겠습니까?')">
+                <i class="material-icons md-24">power_settings_new</i><span class="sidebar-text" data-subtitle="Notification">로그아웃</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- board -->
+    <div class="board-container board-petition">
+        <div class="board-header">
+            <h3 class="header-title">
+                <i class="material-icons md-24 title-icon">record_voice_over</i>민원
+            </h3>
+            <span class="header-subtitle-description">입주민들의 민원 현황을 관리하고 처리할 수 있습니다</span>
+
+        </div>
+        <div class="board-wrapper">
+            <div class="board-wrapper-header">
+                <span class="board-notice-count open-petition-count">2개</span>
+            </div>
+            
+            <!-- list each wip -->
+            <h3 class="list-header-title petition-title now">새로운 민원<span class="petition-count">(2)</span></h3>
+            <div class="list-board-plain">
+                <div class="list-numbering-wrapper"><span class="list-numbering">162</span></div>
+                <div class="list-board-text-wrapper petition-title-text"><a class="list-board-text" href="/html/post/post-petition-image.html">주민들의 민원 사항을 관리할 수 있습니다.<span class="dashboard-new-oval"></span></a></div>
+                <div class="board-petition-set-status-inline list-board-view-count">
+                    <span class="petition-set-status-selectbox-inline">접수완료</span>
+                </div>
+                <div class="list-board-time petition-submitted-time"><span>2018/06/19</span></div>
+            </div>
+            
+            <!-- list each old -->
+            <h3 class="list-header-title petition-title old">종료된 민원</h3>
+            <div class="list-board-plain">
+                <div class="list-numbering-wrapper"><span class="list-numbering">160</span></div>
+                <div class="list-board-text-wrapper petition-title-text"><a class="list-board-text" href="#">처리 완료된 민원은 따로 분류됩니다.</a></div>
+                <div class="board-petition-set-status-inline list-board-view-count">
+                    <span class="petition-set-status-selectbox-inline">처리완료</span>
+                </div>
+                <div class="list-board-time petition-submitted-time"><span>2018/06/19</span></div>
+            </div>
+            
+            <!-- pagination -->
+            <div class="list-board-page-indicator">
+                <div class="indicator-before" disabled>
+                    <a><i class="material-icons md-24">navigate_before</i></a>
+                </div>
+                <div class="indicator-pagination">
+                    <a class="this-page"><li>1</li></a>
+                    <a><li>2</li></a>
+                    <a><li>3</li></a>
+                    <a><li>4</li></a>
+                    <a><li>5</li></a>
+                </div>
+                <div class="indicator-next">
+                    <a><i class="material-icons md-24">navigate_next</i></a>
+                </div>
+            </div>
+        </div>
+
+        <p class="copyright"></p>
+    </div>
+
+    <!-- inject:js -->
+    <script src="/js/dist/index.js"></script>
+    <!-- endinject -->
+</body>
+</html>

@@ -1,0 +1,101 @@
+#index {
+    background-color: $brand;
+
+    .login-form-container {
+        width: 400px;
+        height: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        @extend %center-all;
+        @include border-radius($grid4x);
+
+        @media #{$pablet} {
+            width: 100%;
+            @include border-radius(0);
+        }
+
+        .login-form-title {
+            margin: $grid2x 0;
+        }
+
+        .login-text-field {
+            width: 320px;
+            margin: 0 auto;
+
+            @media #{$pablet} {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .login-form-wrapper {
+                margin-top: $grid8x;
+                @include selection();
+
+                input {
+                    width: 100%;
+                    display: block;
+                    height: $grid10x;
+                    padding: $grid4x;
+                    margin-bottom: $grid4x;
+                    background-color: $textf9;
+                    border: 1px solid $textccc;
+                    @include border-radius();
+                    @include transform(translateZ(0));
+
+                    &:focus {
+                        border: 1px solid $brand;
+                    }
+
+                    &:hover {
+                        background-color: $texteee;
+                    }
+                }
+
+                .login-btn {
+                    width: 100%;
+                    border: none;
+                    color: white;
+                    display: block;
+                    height: $grid10x;
+                    font-weight: 900;
+                    margin-bottom: $grid8x;
+                    background-color: $brand;
+                    @include border-radius();
+                    @include transition(all .25s ease);
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $brand-hover;
+                    }
+                    
+                    &[disabled] {
+                        background-color: $textccc;
+    
+                        &:hover {
+                            cursor: auto;
+                            background-color: $textccc;
+                        }
+                    }
+                }
+
+                .login-form-remember-me {
+                    width: 100%;
+                    height: $grid12x;
+                    // font-weight: 400;
+                    text-align: center;
+                    display: inline-block;
+                    @include center-text();
+                    @include transform(translateZ(0));
+
+                    #login-remember-me,
+                    label {
+                        cursor: pointer;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

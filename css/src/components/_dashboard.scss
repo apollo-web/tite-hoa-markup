@@ -1,0 +1,248 @@
+.dashboard-container {
+    @include box-sizing(border-box);
+
+    &.board-container {
+
+        &.copy {
+
+            &::after {
+                margin-top: $grid4x;
+            }
+        }
+    }
+
+    .dashboard-wrapper {
+        float: left;
+        width: 32.5%;
+        margin: 0 auto;
+        margin-bottom: $grid4x;
+        @include box-shadow();
+        @include border-radius();
+        @include transform(translateZ(0));
+        @include transition(all .25s ease);
+
+        // prevent refresh animation ie
+        @media #{$ie} {
+            @include transition(all 0s ease);
+        }
+
+        &:not(:nth-child(3n + 0)) {
+            margin-right: 1.25%;
+            @include transform(translateZ(0));
+        }
+
+        @media #{$ipad} {
+            width: 49%;
+            @include transform(translateZ(0));
+
+            // reset nth margin above
+            &:not(:nth-child(3n + 0)) {
+                margin-right: 0;
+                @include transform(translateZ(0));
+            }
+
+            &:nth-child(odd) {
+                margin-right: 2%;
+                @include transform(translateZ(0));
+            }
+        }
+
+        @media #{$tablet} {
+            width: 100%;
+            margin-right: none;
+            @include transform(translateZ(0));
+        }
+
+        .dashboard-card {
+            position: relative;
+            z-index: 5 !important;
+            height: calc(
+                #{$grid100x} + #{$grid2x}
+            );
+            @include selection();
+            @include board-card();
+
+            &.extended {
+                height: calc(
+                    #{$grid100x} + #{$grid20x} + #{$grid2x}
+                );
+                @include border-radius();
+
+                @media #{$pablet} {
+                    height: auto;
+                }
+            }
+
+            @media #{$pablet} {
+                height: auto;
+            }
+
+            .dashboard-title {
+                color: $brand;
+                margin-top: calc(-#{$grid3x});
+                margin-bottom: $grid4x;
+                border-bottom: 1px solid $texteee;
+                @include font-size($grid4x);
+
+                .material-icons {
+                    margin-right: $grid2x;
+                    display: inline-block;
+                    vertical-align: text-bottom;
+                }
+
+                .dashboard-see-all-each {
+                    float: right;
+                    color: $text999;
+                    font-weight: 400;
+                    @include font-size(($grid3x) + ($grid / 2));
+
+                    &::after {
+                        content: "전체보기";
+                    }
+
+                    &:hover {
+                        color: $text333;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .scrollable {
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                padding: $grid4x;
+                border: 1px solid $texteee;
+                @include border-radius();
+                @include button-pressed(0.985);
+                @include transform(translateZ(0));
+                @include transition(all .25s ease);
+
+                &:hover {
+                    border: 1px solid $brand;
+                    background-color: $textfa;
+                    @include transition(all .25s ease);
+                }
+
+                &:not(:first-child) {
+                    margin-top: calc(-#{$grid2x});
+                }
+            }
+
+
+            .dashboard-card-subtitle {
+                font-weight: 900;
+                @include selection();
+                @include font-size($grid5x);
+
+                .dashboard-new-oval {
+                    width: $grid2x;
+                    height: $grid2x;
+                    margin-left: $grid;
+                    display: inline-block;
+                    margin-bottom: $grid2x;
+                    background-color: $noti;
+                    @include border-radius(100%);
+                }
+            }
+
+            .dashboard-no-item {
+                margin-bottom: $grid4x;
+            }
+
+
+            
+            /* ==============================
+                dashboard item each
+            ============================== */
+            .dashboard-item-each {
+                margin-bottom: $grid4x;
+                // prevent scrollbar
+                overflow: hidden !important;
+
+                // hide scrollbar ie
+                @media #{$ie} {
+                    overflow: hidden !important;
+                }
+
+                // hide scrollbar edge
+                @supports (-ms-ime-align:auto) {
+                    overflow: hidden !important;
+                }
+            
+                // overflow -> ellipsis
+                $line-height: 1.6;
+                $lines-to-show: 3;
+                $noti-font-size: $grid4x - ($grid / 2);
+            
+                .dashboard-card-item-atitle,
+                .dashboard-card-item-span {
+                    overflow: hidden !important;
+                    display: -webkit-box !important;
+                    display: -moz-box !important;
+                    display: -ms-flexbox !important;
+                    -webkit-box-orient: vertical !important; 
+                    @include text-overflow();
+                }
+            
+                .dashboard-card-item-atitle {
+                    width: 100%;
+                    color: $text333;
+                    cursor: pointer;
+                    font-weight: 900;
+                    -moz-line-clamp: 1 !important;
+                    -webkit-line-clamp: 1 !important;
+                    height: calc(
+                        #{$line-height} * 1 * 16px);
+                    @include selection();
+                    @include transform(translateZ(0));
+                }
+
+                .dashboard-card-item-span {
+                    color: $text777;
+                    -moz-line-clamp: $lines-to-show !important;
+                    -webkit-line-clamp: $lines-to-show !important;
+                    height: calc(
+                        #{$line-height} * #{$lines-to-show} * #{$noti-font-size}
+                    );
+                    @include selection();
+                    @include text-overflow();
+                    @include font-size($noti-font-size);
+                    @include line-height($noti-font-size);
+                }
+            }
+        }
+
+        // dashboard button
+        .dashboard-button-wrapper {
+            z-index: 1;
+            width: 100%;
+            padding: $grid4x;
+            background-color: white;
+            @include border-radius(0 0 $grid $grid);
+
+            .dashboard-btn-overall-link {
+
+                .dashboard-btn-overall {
+                    width: 100%;
+                    height: $grid12x;
+                    @include btn-brand-border();
+                    @include button-pressed(0.985);
+                    @include transform(translateZ(0));
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ==============================
+    mixins
+============================== */
+@mixin dashboard-subspan(){
+    color: $text999;
+    display: inline-block;
+    margin-bottom: $grid4x;
+    @include font-size($grid3x);
+}

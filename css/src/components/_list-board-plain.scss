@@ -1,0 +1,235 @@
+.board-wrapper {
+    
+    .list-board-plain {
+        margin: 0;
+        width: 100%;
+        height: $grid12x;
+        padding: 0 $grid4x;
+        position: relative;
+        @include selection();
+        @include border-radius();
+        @include box-sizing(border-box);
+        @include transform(translateZ(0));
+
+        &:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        &.header {
+
+            span {
+                font-weight: 900;
+                color: $text999 !important;
+                cursor: default !important;
+            }
+
+            .list-numbering-wrapper {
+                @include transform(translateY(-50%));
+            }
+
+            .list-board-text {
+
+                &:hover {
+                    text-decoration: none !important;
+                }
+            }
+        }
+
+
+        .list-numbering-wrapper {
+            @include center-text();
+
+            .list-numbering {
+                color: $brand;
+                @include center-text();
+            }
+        }
+
+
+        .list-board-text-wrapper {
+            @include overflow();
+
+            .dashboard-new-oval {
+                width: $grid2x;
+                height: $grid2x;
+                margin-left: $grid;
+                display: inline-block;
+                margin-bottom: $grid2x;
+                background-color: $noti;
+                @include border-radius(100%);
+            }
+
+
+            .list-board-text {
+                color: $text333;
+                cursor: pointer;
+                @include overflow();
+                @include center-text();
+    
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &.list-paused {
+                    
+                    &::after {
+                        color: $textccc;
+                        content: " (일시중지됨)";
+                    }
+                }
+            }
+        }
+
+
+        .list-board-view-count,
+        .list-board-time {
+            color: $text999;
+            display: inline-block;
+        }
+
+        .list-board-time {
+            color: $text333;
+
+            span {
+                @include center-text();
+            }
+
+            @media #{$tablet} {
+                display: none !important;
+            }
+
+            @media #{$landsc} {
+                display: inline-block !important;
+            }
+
+            @media #{$middle} {
+                display: none !important;
+            }
+        }
+
+        .list-board-view-count {
+            text-align: right;
+            
+            span {
+                @include center-text();
+            }
+        }
+
+
+
+        $margin:           $grid2x;
+        $numbering-width:  $grid10x;
+        $date-width:       $grid24x;
+        $view-count-width: $grid12x;
+
+        .list-numbering-wrapper,
+        .list-board-text-wrapper,
+        .list-board-view-count,
+        .list-board-time {
+            position: absolute;
+            height: $grid12x !important;
+            margin-right: $margin !important;
+        }
+
+        .list-numbering-wrapper {
+            width: $numbering-width !important;
+        }
+
+
+        .list-board-text-wrapper {
+            left: calc(
+                #{$numbering-width} + #{$grid8x}
+            ) !important;
+            right: calc(
+                #{$date-width} + #{$view-count-width} + #{$grid10x}
+            ) !important;
+
+            @media #{$tablet} {
+                right: calc(
+                    #{$view-count-width} + #{$grid6x}
+                ) !important;
+            }
+
+            @media #{$landsc} {
+                right: calc(
+                    #{$date-width} + #{$view-count-width} + #{$grid10x}
+                ) !important;
+            }
+
+            @media #{$middle} {
+                right: calc(
+                    #{$view-count-width} + #{$grid6x}
+                ) !important;
+            }
+
+            @media #{$mobile} {
+                left: calc(
+                    #{$numbering-width} + #{$grid6x}
+                ) !important;
+                right: calc(
+                    #{$view-count-width} + #{$grid4x}
+                ) !important;
+            }
+
+
+            &.petition-title-text {
+                right: calc(
+                    #{$date-width} + #{$view-count-width} + #{$grid18x}
+                ) !important;
+
+                @media #{$tablet} {
+                    right: calc(
+                        #{$view-count-width} + #{$grid14x}
+                    ) !important;
+                }
+    
+                @media #{$landsc} {
+                    right: calc(
+                        #{$date-width} + #{$view-count-width} + #{$grid18x}
+                    ) !important;
+                }
+    
+                @media #{$middle} {
+                    right: calc(
+                        #{$view-count-width} + #{$grid14x}
+                    ) !important;
+                }
+    
+                @media #{$mobile} {
+                    left: calc(
+                        #{$numbering-width} + #{$grid6x}
+                    ) !important;
+                    right: calc(
+                        #{$view-count-width} + #{$grid12x}
+                    ) !important;
+                }
+            }
+        }
+
+
+        .list-board-time {
+            width: $date-width !important;
+            right: calc(
+                #{$view-count-width} + #{$grid6x}
+            ) !important;
+
+            &.petition-submitted-time {
+                right: calc(
+                    #{$view-count-width} + #{$grid10x}
+                ) !important;
+            }
+        }
+
+
+        .list-board-view-count {
+            right: $grid2x !important;
+            width: $view-count-width !important;
+
+            &.board-petition-set-status-inline {
+                width: calc(
+                    #{$view-count-width} + #{$grid8x}
+                ) !important;
+            }
+        }
+    }
+}

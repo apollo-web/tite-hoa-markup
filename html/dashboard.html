@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>로라 - 상황판</title>
+
+    <meta name="description" content="로라 - 관리사무소 도구">
+    <meta name="keywords" content="로라">
+    <meta property="og:image" content="/img/dist/launcher.png">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/dist/animate.css">
+    <link rel="stylesheet" href="/css/dist/ballon.css">
+    <link rel="stylesheet" href="/css/dist/style.css">
+    <!-- endinject -->
+</head>
+<body id="main" class="has-header">
+    <div class="dim"></div>
+
+    <!-- header -->
+    <div class="main-header">
+        <div class="hamburger">
+            <i class="material-icons md-24">menu</i>
+        </div>
+        <a class="main-header-link" href="/html/dashboard.html">
+            <img src="/img/dist/launcher.svg" class="main-header-logo">
+            <div class="main-header-apt-name-box"><span class="main-header-apt-name">옥련동 현대5차아파트</span></div>
+        </a>
+    </div>
+
+    <!-- sidebar -->
+    <div class="sidebar-container">
+        <div class="sidebar-wrapper">
+            <a class="sidebar-item dashboard-overall this" title="상황판" href="/html/dashboard.html">
+                <i class="material-icons md-24">dashboard</i><span class="sidebar-text" data-subtitle="Dashboard">상황판</span>
+            </a>
+            <a class="sidebar-item board-plain" title="공지사항" href="/html/notification.html">
+                <i class="material-icons md-24">notification_important</i><span class="sidebar-text" data-subtitle="Dashboard">공지사항</span>
+            </a>
+            <a class="sidebar-item dashboard" title="주민투표" href="/html/vote.html">
+                <i class="material-icons md-24">how_to_vote</i><span class="sidebar-text" data-subtitle="Dashboard">주민투표</span>
+            </a>
+            <a class="sidebar-item board-plain" title="민원" href="/html/petition.html">
+                <i class="material-icons md-24">record_voice_over</i><span class="sidebar-text" data-subtitle="Dashboard">민원</span>
+                <div class="sidebar-noti-new"><span class="noti-count">2</span></div>
+            </a>
+            <a class="sidebar-item board-plain" title="게시판" href="/html/business-post.html">
+                <i class="material-icons md-24">web</i><span class="sidebar-text" data-subtitle="Business post">게시판</span>
+            </a>
+            <a class="sidebar-item board-plain" title="예약알림 설정" href="/html/pre-noti.html">
+                <i class="material-icons md-24">alarm_add</i><span class="sidebar-text" data-subtitle="Notification">예약알림 설정</span>
+            </a>
+            <a class="sidebar-item board-plain" title="로그아웃" href="/index.html" onclick="confirm('로그아웃 하시겠습니까?')">
+                <i class="material-icons md-24">power_settings_new</i><span class="sidebar-text" data-subtitle="Notification">로그아웃</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- board -->
+    <div class="board-container dashboard-container">
+        <div class="board-header">
+            <h3 class="header-title">
+                <i class="material-icons md-24 title-icon">dashboard</i>상황판
+            </h3>
+            <span class="header-subtitle-description">우리 아파트단지 최근 소식을 모아볼 수 있습니다</span>
+
+        </div>
+        <!-- dashboard each cards -->
+        <div class="dashboard-container">
+
+            <!-- dashboard: activity -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-card extended">
+                    <h3 class="dashboard-title">
+                        <i class="material-icons md-22">public</i>우리 아파트 소식
+                    </h3>
+                    <div class="dashboard-card-activity">
+                        <h6 class="dashboard-card-subtitle">새로운 활동</h6>
+                        <span class="new-admin-count"></span>
+                        <div class="dashboard-activity-wrapper">
+
+                            <div class="dashboard-activity-item">
+                                <i class="material-icons md-24">business</i>관리사무소 좋아요:
+                                <span class="dashboard-activity-count hoa-likes">48</span>
+                            </div>
+
+                            <div class="dashboard-activity-item">
+                                <i class="material-icons md-24">favorite</i>최근 게시물 좋아요:
+                                <span class="dashboard-activity-count recent-likes">32</span>
+                            </div>
+
+                            <div class="dashboard-activity-item">
+                                <i class="material-icons md-24">chat</i>최근 게시물 댓글:
+                                <span class="dashboard-activity-count recent-comments">16</span>
+                            </div>
+
+                            <div class="dashboard-activity-item dashboard-item-each">
+                                <span class="dashboard-card-item-atitle"><span class="dashboard-card-user-nickname">다니엘</span></span>
+                                <span class="dashboard-card-item-span">
+                                        항상 우리 아파트 단지를 위해 힘써주시는 관리사무소 관계자 여러분들께 너무 감사드립니다 ^^ 밤낮없이 더 나은 아파트를 만들기 위해 힘써주시는 관리사무소 여러분들덕에 우리 아파트가 살맛나는 아파트단지가 되는것같아요!
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dashboard: notification -->
+            <div class="dashboard-wrapper animated bounce delay-2s">
+            <!-- 공지사항을 게시한 관리사무소는 위에서 animated bounce delay-2s 클래스 제외 -->
+
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">
+                        <a href="/html/notification.html"><i class="material-icons md-22">notification_important</i>공지사항</a>
+                        <a href="/html/notification.html" class="dashboard-see-all-each"></a>
+                    </h3>
+                    <div class="dashboard-card-notification">
+                        <h6 class="dashboard-card-subtitle">공지사항</h6>
+                        <span class="new-notification-count">1</span>
+                        <!-- 최대 2개 -->
+                            <div class="dashboard-card-notification-item">
+                                <div class="dashboard-item-each scrollable">
+                                    <a href="/html/post/post-notification.html">
+                                        <span class="dashboard-card-item-atitle">첫 번째 공지사항을 작성해보세요!</span>
+                                        <span class="dashboard-card-item-span">
+                                            작성한 공지사항은 우리아파트 로라 앱 유저들에게 전달 됩니다. 상단의 '새 공지사항 게시' 버튼을 눌러서 우리 아파트의 첫 번째 로라 공지사항을 작성하고, 주민들과 더욱 간편하고 빠르게 소통해보세요!
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- btn to write post -->
+                <div class="dashboard-button-wrapper">
+                    <a class="dashboard-btn-overall-link" href="/html/write/write-post-noti.html">
+                        <button class="dashboard-btn-overall animated headShake delay-5s">새 공지사항 게시</button>
+                        <!-- 공지사항을 게시한 관리사무소는 위의 버튼에서 animated headShake delay-5s 클래스 제외 -->
+
+                    </a>
+                </div>
+            </div>
+
+            <!-- dashboard: vote -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">
+                        <a href="/html/vote.html"><i class="material-icons md-22">how_to_vote</i>주민투표</a>
+                        <a href="/html/vote.html" class="dashboard-see-all-each"></a>
+                    </h3>
+                    <div class="dashboard-card-vote">
+                        <h6 class="dashboard-card-subtitle"><a href="/html/post/post-vote.html">현재 진행중인 투표의 예시</a></h6>
+                        <span class="dashboard-card-vote-duedate">2018년 8월 3일</span>
+                        <div class="dashboard-card-vote-item">
+                            <span class="vote-item-progress" style="width: 56%">
+                                <span class="vote-item-title item-highest">7월 20일 (금)</span>
+                            </span>
+                            <span class="vote-item-numb">112</span>
+                        </div>
+                        <div class="dashboard-card-vote-item">
+                            <span class="vote-item-progress" style="width: 32%">
+                                <span class="vote-item-title">7월 27일 (금)</span>
+                            </span>
+                            <span class="vote-item-numb">64</span>
+                        </div>
+                        <div class="dashboard-card-vote-item">
+                            <span class="vote-item-progress" style="width: 12%">
+                                <span class="vote-item-title">7월 13일 (금)</span>
+                            </span>
+                            <span class="vote-item-numb">48</span>
+                        </div>
+                        <span class="dashboard-card-vote-join">224</span>
+                    </div>
+                </div>
+                <!-- btn to write post -->
+                <div class="dashboard-button-wrapper">
+                    <a class="dashboard-btn-overall-link" href="/html/write/write-post-vote.html">
+                        <button class="dashboard-btn-overall">새 주민투표 만들기</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- dashboard: petition -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">
+                        <a href="/html/petition.html"><i class="material-icons md-22">record_voice_over</i>민원</a>
+                        <a href="/html/petition.html" class="dashboard-see-all-each"></a>
+                    </h3>
+                    <div class="dashboard-card-petition">
+                        <h6 class="dashboard-card-subtitle">새로운 민원<span class="dashboard-new-oval"></span></h6>
+                        <span class="new-petition-count">1</span>
+                        <!-- 최대 2개 -->
+                            <div class="dashboard-card-petition-item">
+                                <div class="dashboard-item-each scrollable">
+                                    <a href="/html/post/post-petition-image.html">
+                                        <span class="dashboard-card-item-atitle">주민들의 민원 사항을 관리할 수 있습니다</span>
+                                        <span class="dashboard-card-item-span">
+                                            주민들의 민원을 이곳에서 확인하고 관리할 수 있습니다. 접수된 민원은 상태에 따라서 접수완료, 검토중, 처리중, 처리완료 그리고 반려 상태로 변경 가능합니다. 주민들의 민원을 쉽고 간편하게 처리해보세요.
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- btn to write post -->
+                <div class="dashboard-button-wrapper">
+                    <a class="dashboard-btn-overall-link" href="/html/petition.html">
+                        <button class="dashboard-btn-overall">전체 민원 보기</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- dashboard: business -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">
+                        <a href="/html/business-post.html"><i class="material-icons md-22">web</i>게시판</a>
+                        <a href="/html/business-post.html" class="dashboard-see-all-each"></a>
+                    </h3>
+                    <div class="dashboard-card-business">
+                        <h6 class="dashboard-card-subtitle">게시판</h6>
+                        <span class="new-business-count">1</span>
+                        <!-- 최대 2개 -->
+                            <div class="dashboard-card-petition-item">
+                                <div class="dashboard-item-each scrollable">
+                                    <a href="/html/post/post-business.html">
+                                        <span class="dashboard-card-item-atitle">광고 게시물을 작성하고 관리해보세요</span>
+                                        <span class="dashboard-card-item-span">
+                                            우리 아파트와 제휴를 맺은 업체, 기관 등의 광고 글을 게시하고 관리할 수 있습니다. 게시한 광고 글은, 로라 앱을 사용하는 주민들에게도 보여지게 됩니다. 사후 관리가 힘들고 지저분한 종이 광고나 전단지 대신, 아파트 관리도구를 통해 깔끔하고 스마트하게 광고를 진행하세요!
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- btn to write post -->
+                <div class="dashboard-button-wrapper">
+                    <a class="dashboard-btn-overall-link" href="/html/write/write-post-business.html">
+                        <button class="dashboard-btn-overall">새 게시물 작성</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- dashboard: pre-noti -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-card">
+                    <h3 class="dashboard-title">
+                        <a href="/html/pre-noti.html"><i class="material-icons md-22">alarm_add</i>예약알림</a>
+                        <a href="/html/pre-noti.html" class="dashboard-see-all-each"></a>
+                    </h3>
+                    <div class="dashboard-card-pre-noti">
+                        <h6 class="dashboard-card-subtitle">등록된 예약알림</h6>
+                        <span class="new-pre-noti-count">1</span>
+                        <!-- 최대 3개 -->
+                            <div class="dashboard-card-pre-noti-item">
+                                <a class="dashboard-card-pre-noti-item-link" href="/html/post/post-pre-noti.html">
+                                    <span class="dashboard-card-pre-noti-title">첫 번째 예약알림을 만들어보세요</span>
+                                    <span class="dashboard-card-pre-noti-time">매주 월요일, 금요일 오전 09:00</span>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                <!-- btn to write post -->
+                <div class="dashboard-button-wrapper">
+                    <a class="dashboard-btn-overall-link" href="/html/write/write-post-pre-noti.html">
+                        <button class="dashboard-btn-overall">새 예약알림 만들기</button>
+                    </a>
+                </div>
+            </div>
+            <p class="copyright"></p>
+        </div>
+    </div>
+
+    <!-- inject:js -->
+    <script src="/js/dist/index.js"></script>
+    <!-- endinject -->
+</body>
+</html>

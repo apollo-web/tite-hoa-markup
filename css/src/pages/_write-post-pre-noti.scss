@@ -1,0 +1,88 @@
+.post-wrapper {
+
+    .post-wrapper-paragraph {
+
+        .write-post-set-time-wrapper {
+            margin-top: $grid6x;
+            border: 1px solid $textccc;
+            padding: $grid4x $grid4x $grid6x;
+            @include border-radius();
+
+            .write-post-set-time-legend {
+                font-weight: 900;
+                padding: 0 $grid2x;
+            }
+
+            .write-post-set-time-title {
+                display: inline-block;
+                margin-bottom: $grid2x !important;
+            }
+
+            .write-post-set-time,
+            .write-post-set-time-title {
+                margin: 0 0 $grid6x 0;
+            }
+
+            .write-post-set-date {
+
+                &:first-child {
+                    padding: $grid4x 0 $grid4x;
+                    border-bottom: 1px dashed $texteee;
+                }
+
+                .write-post-set-date-radio-wrapper {
+                    margin: $grid2x 0 $grid4x;
+                }
+
+                .write-post-set-date-text {
+                    color: $brand;
+                    display: block;
+                    font-weight: 900;
+                    margin: 0 0 $grid2x 0;
+                }
+
+                .write-post-set-date-item {
+                    @include input-styling();
+                }
+            }
+        }
+        
+
+        .write-post-summary {
+
+            .write-post-summary-text {
+                font-weight: 900;
+                margin-top: $grid4x;
+                display: inline-block;
+
+                &.noti {
+                    &::after {
+                        font-weight: 400;
+                        content: " 후 이 시간에 공지사항 게시를 종료합니다.";
+                    }
+                }
+
+                &.pre-noti {
+                    &::after {
+                        font-weight: 400;
+                        content: " 주민들에게 알림을 전송합니다.";
+                    }
+                }
+
+                &.vote {
+                    &::after {
+                        font-weight: 400;
+                        content: " 후 이 시간에 투표를 종료합니다.";
+                    }
+                }
+
+                &.business {
+                    &::after {
+                        font-weight: 400;
+                        content: " 후 이 시간에 광고 게시를 종료합니다.";
+                    }
+                }
+            }
+        }
+    }
+}
